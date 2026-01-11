@@ -1,0 +1,167 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: "Segoe UI", sans-serif;
+}
+
+body{
+    min-height:100vh;
+    background: radial-gradient(circle at top, #0d0230, #000);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    color:white;
+    overflow:hidden;
+}
+
+/* ===== MAIN GLASS APP ===== */
+.app{
+    width:600px;
+    height:700px;
+    background:rgba(255,255,255,0.08);
+    backdrop-filter:blur(20px);
+    padding:25px;
+    border-radius:20px;
+    box-shadow:0 0 40px rgb(141, 5, 118);
+    animation:pulse 4s infinite;
+    position:relative;
+}
+
+/* Neon pulse */
+@keyframes pulse {
+    0%{ box-shadow:0 0 20px cyan; }
+    50%{ box-shadow:0 0 50px cyan; }
+    100%{ box-shadow:0 0 20px cyan; }
+}
+
+/* ===== TITLE ===== */
+h1{
+    text-align:center;
+    margin-bottom:20px;
+    color:rgb(150, 16, 59);
+    text-shadow:0 0 10px rgb(99, 1, 40);
+    background: rgba(0,255,255,0.05);
+    padding:10px;
+    border-radius:12px;
+    border:1px solid cyan;
+}
+
+/* ===== INPUTS ===== */
+.input-box{
+    display:grid;
+    grid-template-columns:1fr 1fr 1fr auto;
+    gap:20px;
+}
+
+input, select{
+    background:rgba(76, 24, 91, 0.7);
+    border:1px solid cyan;
+    color:cyan;
+    padding:10px;
+    border-radius:8px;
+    outline:none;
+    box-shadow:0 0 10px cyan;
+}
+
+/* ===== NEON DROPDOWN ===== */
+select{
+    appearance:none;
+    -webkit-appearance:none;
+    cursor:pointer;
+    background-image:
+        linear-gradient(45deg, transparent 50%, cyan 50%),
+        linear-gradient(135deg, cyan 50%, transparent 50%);
+    background-position:
+        calc(100% - 20px) calc(1em + 2px),
+        calc(100% - 15px) calc(1em + 2px);
+    background-size:
+        5px 5px,
+        5px 5px;
+    background-repeat:no-repeat;
+}
+
+select:hover{
+    box-shadow:0 0 25px cyan;
+}
+
+/* ===== BUTTONS ===== */
+button{
+    background:cyan;
+    border:none;
+    padding:10px 16px;
+    border-radius:8px;
+    cursor:pointer;
+    font-weight:bold;
+    box-shadow:0 0 15px cyan;
+    transition:0.3s;
+}
+
+button:hover{
+    transform:scale(1.05);
+    box-shadow:0 0 30px cyan;
+}
+
+/* ===== FILTERS ===== */
+.filters{
+    display:flex;
+    justify-content:space-between;
+    margin:20px 0;
+}
+
+/* ===== TASK LIST ===== */
+ul{
+    list-style:none;
+    max-height:420px;
+    overflow-y:auto;
+    padding-right:10px;
+}
+
+/* ===== TASK CARD ===== */
+li{
+    background:rgba(0,0,0,0.7);
+    padding:12px;
+    margin-bottom:12px;
+    border-radius:10px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    border-left:5px solid cyan;
+    transition:0.3s;
+}
+
+li:hover{
+    box-shadow:0 0 15px rgb(117, 59, 98), 0 0 30px rgba(233, 112, 231, 0.6);
+    transform: scale(1.02);
+}
+
+li.completed{
+    text-decoration:line-through;
+    opacity:0.6;
+}
+
+/* ===== TASK TEXT ===== */
+.task-info{
+    flex:1;
+}
+
+.task-info small{
+    color:#00ffff;
+    font-size:12px;
+}
+
+/* ===== PRIORITY BADGES ===== */
+.priority{
+    padding:4px 10px;
+    border-radius:20px;
+    font-size:11px;
+    font-weight:bold;
+    margin-left:5px;
+}
+
+.high{ background:red; box-shadow:0 0 10px red;}
+.medium{ background:orange; box-shadow:0 0 10px orange;}
+.low{ background:lime; box-shadow:0 0 10px lime;}
+/* date */
+
+
